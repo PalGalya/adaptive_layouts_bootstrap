@@ -63,7 +63,10 @@ footer {
 }
 
 .carousel.vertical .carousel-item {
+  transform: translate3d(0, 0, 0);
   transition: transform 0.6s ease-in-out;
+  will-change: transform;
+  contain: layout style paint;
 }
 
 .carousel.vertical .carousel-item-next:not(.carousel-item-start),
@@ -80,7 +83,6 @@ footer {
   flex-direction: column;
   right: 0;
   top: 50%;
-  transform: translateY(-50%);
   left: auto;
   margin: 0 1rem 0 0;
 }
@@ -103,9 +105,11 @@ footer {
 @media (max-width: 768px) {
   .carousel.vertical {
     height: 400px;
+    contain: content;
   }
   .carousel-item img {
     height: 300px;
+    content-visibility: auto;
   }
 }
 
@@ -115,7 +119,7 @@ footer {
 .btn-custom,
 .form-control,
 .form-select {
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 /* Стилі для форми */
@@ -124,6 +128,7 @@ footer {
   border-color: var(--primary-color);
   box-shadow: 0 0 0 0.25rem rgba(249, 204, 227, 0.25);
   outline: none;
+  transform: translateZ(0);
 }
 
 .form-label {
@@ -217,4 +222,13 @@ footer {
 
 .form-control:hover, .form-select:hover {
   border-color: var(--primary-color);
+}
+
+@media (hover: hover) {
+  .btn-custom:hover,
+  .input-group-text:hover,
+  .form-control:hover,
+  .form-select:hover {
+    transition: all 0.3s ease;
+  }
 }
