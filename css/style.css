@@ -1,0 +1,220 @@
+:root {
+  --primary-color: #f9cce3;
+  --secondary-color: #6d3a5a;
+  --bg-color: #fef6fb;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+header,
+footer {
+  background-color: var(--primary-color);
+}
+
+.menu-item {
+  color: var(--secondary-color);
+}
+
+.header h1 {
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+}
+
+.btn-custom {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+}
+
+.btn-custom:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.carousel-item img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.list-group-item:hover {
+  background-color: var(--primary-color);
+  cursor: pointer;
+}
+
+.carousel-caption {
+  background: rgba(109, 58, 90, 0.7);
+  border-radius: 5px;
+}
+
+/* Вертикальний слайдер */
+.carousel.vertical {
+  height: 600px;
+}
+
+.carousel.vertical .carousel-inner {
+  height: 100%;
+}
+
+.carousel.vertical .carousel-item {
+  transition: transform 0.6s ease-in-out;
+}
+
+.carousel.vertical .carousel-item-next:not(.carousel-item-start),
+.carousel.vertical .active.carousel-item-end {
+  transform: translateY(100%);
+}
+
+.carousel.vertical .carousel-item-prev:not(.carousel-item-end),
+.carousel.vertical .active.carousel-item-start {
+  transform: translateY(-100%);
+}
+
+.carousel.vertical .carousel-indicators {
+  flex-direction: column;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  left: auto;
+  margin: 0 1rem 0 0;
+}
+
+.carousel.vertical .carousel-control-prev {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: center;
+}
+
+.carousel.vertical .carousel-control-next {
+  top: auto;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Медіа-запити для адаптивності слайдеру */
+@media (max-width: 768px) {
+  .carousel.vertical {
+    height: 400px;
+  }
+  .carousel-item img {
+    height: 300px;
+  }
+}
+
+/* Анимації */
+.list-group-item,
+.accordion-button,
+.btn-custom,
+.form-control,
+.form-select {
+  transition: all 0.3s ease;
+}
+
+/* Стилі для форми */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(249, 204, 227, 0.25);
+  outline: none;
+}
+
+.form-label {
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+}
+
+.input-group-text {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--secondary-color);
+  transition: all 0.3s ease;
+}
+
+.input-group-text:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* Стилі для кнопок */
+.btn {
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.btn-lg {
+  padding: 0.75rem 1.5rem;
+}
+
+/* Стилі для акордеону */
+.accordion-button {
+  font-weight: 600;
+}
+
+.accordion-button:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+/* Стилі для списків */
+.list-group-item {
+  border-left: 4px solid transparent;
+  padding: 1rem 1.25rem;
+}
+
+.list-group-item:hover {
+  border-left-color: var(--secondary-color);
+  transform: translateX(5px);
+}
+
+/* Стилі для навігації */
+.navbar-nav .nav-link {
+  position: relative;
+  padding: 0.5rem 1rem;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary-color);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Анимація для інпутів */
+.form-control, .form-select {
+  transition: all 0.3s ease;
+}
+
+.form-control:hover, .form-select:hover {
+  border-color: var(--primary-color);
+}
